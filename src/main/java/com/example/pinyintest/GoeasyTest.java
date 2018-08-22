@@ -9,7 +9,7 @@ import io.goeasy.GoEasy;
  */
 public class GoeasyTest {
     public static void main(String[] args) {
-        GoEasy goEasy = new GoEasy("BC-c9279786f4974c33a8aba98596570789");
+        GoEasy goEasy = new GoEasy("BC-key");
         goEasy.publish("go2","你好");
     }
 }
