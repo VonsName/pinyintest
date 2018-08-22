@@ -10,6 +10,6 @@ import io.goeasy.GoEasy;
 public class GoeasyTest {
     public static void main(String[] args) {
         GoEasy goEasy = new GoEasy("BC-c9279786f4974c33a8aba98596570789");
-        goEasy.publish("test","你好");
+        goEasy.publish("go2","你好");
     }
 }
