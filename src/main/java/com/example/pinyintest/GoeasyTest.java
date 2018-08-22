@@ -2,6 +2,8 @@ package com.example.pinyintest;
 
 import io.goeasy.GoEasy;
 
+import java.net.URL;
+
 
 /**
  * goEasy使用案例
@@ -9,7 +11,16 @@ import io.goeasy.GoEasy;
  */
 public class GoeasyTest {
     public static void main(String[] args) {
-        GoEasy goEasy = new GoEasy("BC-key");
-        goEasy.publish("go2","你好");
+//        GoEasy goEasy = new GoEasy("BC-key");
+//        goEasy.publish("go2","你好");
+
+        Class<GoeasyTest> clazz = GoeasyTest.class;
+        String simpleName = clazz.getSimpleName();
+        System.out.println(simpleName);
+        URL classpath = clazz.getResource(simpleName + ".class");
+        System.out.println(classpath.toString());
+
+        System.out.println("aa".hashCode());
+        char a='a';
     }
 }
