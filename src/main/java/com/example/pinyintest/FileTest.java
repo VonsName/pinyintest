@@ -4,12 +4,18 @@ package com.example.pinyintest;
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.ArrayDeque;
+import java.util.Queue;
+import java.util.Stack;
 
 public class FileTest {
     public static void main(String[] args) throws IOException {
-        fileOutPutStreamTest();
-        fileChanelWriteTest();
-        fileChanleReadTest();
+        // fileOutPutStreamTest();
+        //  fileChanelWriteTest();
+        //  fileChanleReadTest();
+        File file = new File("D:\\dph");
+        // traverseFile_depth(file);
+        traverseFile_Width(file);
     }
 
 
@@ -146,6 +152,47 @@ public class FileTest {
                 e.printStackTrace();
             }
 
+        }
+    }
+
+    //深度优先遍历
+    public static void traverseFile_depth(File root) {
+        Stack<File> fileStack = new Stack<>();
+        File file;
+        if (root != null && root.isDirectory()) {
+            fileStack.push(root);
+        }
+        while (!fileStack.isEmpty()) {
+            file = fileStack.pop();
+            File[] files = file.listFiles();
+            for (File f : files
+                    ) {
+                if (f.isDirectory()) {
+                    fileStack.push(f);
+                } else {
+                    System.out.println(f.getPath());
+                }
+            }
+        }
+    }
+
+    //广度优先遍历
+    public static void traverseFile_Width(File root) {
+        Queue<File> fileQueue = new ArrayDeque<>();
+        if (root != null && root.isDirectory()) {
+            fileQueue.add(root);
+        }
+        while (!fileQueue.isEmpty()) {
+            File file = fileQueue.remove();
+            File[] files = file.listFiles();
+            for (File f : files
+                    ) {
+                if (f.isDirectory()) {
+                    fileQueue.add(f);
+                } else {
+                    System.out.println(f.getPath());
+                }
+            }
         }
     }
 }
