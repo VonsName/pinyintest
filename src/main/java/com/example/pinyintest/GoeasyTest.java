@@ -1,7 +1,5 @@
 package com.example.pinyintest;
 
-import io.goeasy.GoEasy;
-
 import java.net.URL;
 
 
@@ -21,6 +19,6 @@ public class GoeasyTest {
         System.out.println(classpath.toString());
 
         System.out.println("aa".hashCode());
-        char a='a';
+        char a = 'a';
     }
 }

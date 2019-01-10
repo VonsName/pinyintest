@@ -51,7 +51,7 @@ public class PinYinTest {
         String nihao = getFirstLetters("",HanyuPinyinCaseType.LOWERCASE);
 
         System.out.println(nihao);
-        System.out.println(toHanyuPinyin(""));
+        System.out.println(toHanyuPinyin("脆皮肠（高技）-包"));
         System.out.println(getFirstLetter("脆皮肠（高技）-包"));
     }
 
